@@ -24,4 +24,9 @@
     <string name="status_normal">ESTADO: NORMAL</string>
     <string name="status_connected">Conectado al Hardware</string>
     <string name="status_error">Error de conexión</string>
+    <string name="sim_title">SIMULADOR / CONTROL IOT</string>
+    <string name="sim_subtitle">Envía datos en tiempo real entre 2 celulares:</string>
+    <string name="sim_normal">Normal (75)</string>
+    <string name="sim_alert">Alerta (130)</string>
+    <string name="sim_zero">Sin Dedo (0)</string>
 </resources>

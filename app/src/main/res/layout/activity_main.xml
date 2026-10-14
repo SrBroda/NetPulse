@@ -1,86 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="32dp"
+    android:fillViewport="true"
     android:background="#F5F7FA">
 
-    <!-- Título Principal (Mismo estilo que el login) -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/app_title"
-        android:textColor="#0D47A1"
-        android:textSize="42sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp"/>
-
-    <!-- Subtítulo de la pantalla -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/monitor_title"
-        android:textColor="#1976D2"
-        android:textSize="18sp"
-        android:textStyle="normal"
-        android:layout_marginBottom="48dp"/>
-
-    <!-- Tarjeta central para el monitor de BPM -->
-    <com.google.android.material.card.MaterialCardView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="#FFFFFF"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="4dp"
-        app:strokeWidth="0dp"
-        android:layout_marginBottom="30dp">
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp">
 
-        <LinearLayout
+        <!-- Título Principal -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_title"
+            android:textColor="#0D47A1"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
+
+        <!-- Subtítulo -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/monitor_title"
+            android:textColor="#1976D2"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Tarjeta central para el monitor de BPM -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:strokeWidth="0dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="24dp">
+
+                <!-- Número gigante (0) al centro -->
+                <TextView
+                    android:id="@+id/tvBpm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/initial_bpm_value"
+                    android:textColor="#0D47A1"
+                    android:textSize="100sp"
+                    android:includeFontPadding="false"
+                    android:textStyle="bold" />
+
+                <!-- Texto BPM justo debajo -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bpm_label"
+                    android:textColor="#1976D2"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.1"/>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Estado de la conexión / sensor -->
+        <TextView
+            android:id="@+id/tvEstado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/status_connecting"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
             android:gravity="center"
-            android:padding="30dp">
+            android:padding="14dp"
+            android:background="@drawable/bg_status_rounded"
+            android:layout_marginBottom="28dp"/>
 
-            <!-- Número gigante (0) al centro -->
-            <TextView
-                android:id="@+id/tvBpm"
-                android:layout_width="wrap_content"
+        <!-- Tarjeta de Control y Simulación IoT (Para pruebas entre 2 Celulares) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:strokeColor="#1976D2"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/initial_bpm_value"
-                android:textColor="#0D47A1"
-                android:textSize="120sp"
-                android:includeFontPadding="false"
-                android:textStyle="bold" />
+                android:orientation="vertical"
+                android:padding="16dp">
 
-            <!-- Texto BPM justo debajo -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/bpm_label"
-                android:textColor="#1976D2"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:letterSpacing="0.1"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sim_title"
+                    android:textColor="#0D47A1"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="4dp"/>
 
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sim_subtitle"
+                    android:textColor="#757575"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="12dp"/>
 
-    <!-- Estado de la conexión / sensor (Estilo botón no clicable) -->
-    <TextView
-        android:id="@+id/tvEstado"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/status_connecting"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:padding="16dp"
-        android:background="@drawable/bg_status_rounded"
-        android:layout_marginTop="10dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
 
-</LinearLayout>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSimZero"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/sim_zero"
+                        android:textSize="11sp"
+                        android:padding="0dp"
+                        android:layout_marginEnd="4dp"
+                        app:strokeColor="#9E9E9E"
+                        android:textColor="#616161"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSimNormal"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/sim_normal"
+                        android:textSize="11sp"
+                        android:padding="0dp"
+                        android:layout_marginEnd="4dp"
+                        app:strokeColor="#388E3C"
+                        android:textColor="#388E3C"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSimAlert"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/sim_alert"
+                        android:textSize="11sp"
+                        android:padding="0dp"
+                        app:strokeColor="#D32F2F"
+                        android:textColor="#D32F2F"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>
