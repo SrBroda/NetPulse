@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Toma de latidosapp1</string>
+    <string name="app_title">NetPulse</string>
+    <string name="login_title">Iniciar Sesión</string>
+    <string name="hint_username">Usuario (ej. admin)</string>
+    <string name="hint_password">Contraseña (ej. 1234)</string>
+    <string name="action_login">INICIAR SESIÓN</string>
+    <string name="action_register">REGISTRARSE</string>
+    <string name="msg_complete_fields">Complete todos los campos</string>
+    <string name="msg_user_exists">El usuario ya existe. Elija otro.</string>
+    <string name="msg_register_success">Usuario registrado con éxito</string>
+    <string name="msg_register_error">Error al registrar usuario</string>
+    <string name="msg_login_success">Acceso seguro concedido</string>
+    <string name="msg_login_error">Usuario o contraseña incorrectos</string>
+    <string name="monitor_title">MONITOR CARDÍACO</string>
+    <string name="initial_bpm_value">0</string>
+    <string name="bpm_label">BPM</string>
+    <string name="default_bpm">--BPM</string>
+    <string name="status_connecting">Conectando&#8230;</string>
+    <string name="bpm_format">%1$d BPM</string>
+    <string name="status_disconnected">Desconectado</string>
+    <string name="status_no_finger">ESTADO: SIN DEDO</string>
+    <string name="status_high_alert">ESTADO: ALERTA ALTA</string>
+    <string name="status_normal">ESTADO: NORMAL</string>
+    <string name="status_connected">Conectado al Hardware</string>
+    <string name="status_error">Error de conexión</string>
+</resources>
